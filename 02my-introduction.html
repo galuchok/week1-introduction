@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анастасия — AI-First Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-blue: #0a1628;
+            --ocean-blue: #1e3a5f;
+            --sky-blue: #4a90e2;
+            --ice-blue: #b8d4f1;
+            --warm-white: #fafbfc;
+            --gold-foil: #c9a961;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
+            color: var(--warm-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header section */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .greeting {
+            font-size: 1.1rem;
+            color: var(--ice-blue);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            animation: fadeIn 1.2s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--gold-foil);
+            animation: fadeIn 1.4s ease-out 0.5s backwards;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--ice-blue);
+            font-weight: 400;
+            animation: fadeIn 1.6s ease-out 0.7s backwards;
+            margin-bottom: 10px;
+        }
+
+        .school-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid var(--sky-blue);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--sky-blue);
+            margin-top: 15px;
+            animation: fadeIn 1.8s ease-out 0.9s backwards;
+        }
+
+        /* Main content card */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(184, 212, 241, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.2s ease-out 1s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold-foil);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-foil);
+        }
+
+        .week-info {
+            background: rgba(74, 144, 226, 0.1);
+            border-left: 4px solid var(--sky-blue);
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            animation: fadeIn 1.4s ease-out 1.2s backwards;
+        }
+
+        .week-label {
+            font-size: 0.85rem;
+            color: var(--sky-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .week-title {
+            font-size: 1.4rem;
+            color: var(--warm-white);
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--ice-blue);
+            margin-bottom: 30px;
+            animation: fadeIn 1.6s ease-out 1.4s backwards;
+        }
+
+        /* Contact section */
+        .contact-section {
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeIn 1.8s ease-out 1.6s backwards;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 35px;
+            background: var(--sky-blue);
+            color: var(--warm-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.9;
+        }
+
+        .contact-link::before {
+            content: '✉';
+            font-size: 1.3rem;
+        }
+
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: rgba(74, 144, 226, 0.08);
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .skill-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold-foil);
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            color: var(--ice-blue);
+            padding: 8px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(184, 212, 241, 0.1);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: '→';
+            color: var(--sky-blue);
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: var(--ice-blue);
+            font-size: 0.9rem;
+            opacity: 0.7;
+            animation: fadeIn 2s ease-out 1.8s backwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .card {
+                padding: 30px 25px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="greeting">Добро пожаловать</div>
+            <h1>Привет! Я Анастасия</h1>
+            <p class="tagline">От 1С программиста к AI-First Developer</p>
+            <span class="school-badge">🎓 ARIA School Student</span>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2 class="section-title">Моё путешествие</h2>
+                
+                <p class="about-text">
+                    После 20+ лет работы с 1С и ERP-системами начинаю новую главу в AI-First Development. 
+                    Учусь создавать современные приложения, используя силу искусственного интеллекта и новейшие технологии.
+                </p>
+
+                <div class="week-info">
+                    <div class="week-label">Сейчас прохожу</div>
+                    <div class="week-title">Week 1 — Infrastructure Mastery</div>
+                </div>
+
+                <p class="about-text">
+                    Осваиваю GitHub, Vercel, Claude Projects и создаю свои первые проекты в интернете. 
+                    Каждый день — новый шаг к цели: удалённая работа в современной разработке.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title">Мои навыки</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Технические</h3>
+                        <ul class="skill-list">
+                            <li>1С (8.2, ERP, УТ, WMS)</li>
+                            <li>SAP S/4HANA</li>
+                            <li>SQL, СКД</li>
+                            <li>Datareon, EDI</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Инструменты</h3>
+                        <ul class="skill-list">
+                            <li>ChatGPT, Claude</li>
+                            <li>Figma, Photoshop</li>
+                            <li>GitHub, Vercel</li>
+                            <li>UI/UX Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Профессиональные</h3>
+                        <ul class="skill-list">
+                            <li>Бизнес-анализ</li>
+                            <li>Управление проектами</li>
+                            <li>Обучение пользователей</li>
+                            <li>Техническая документация</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Личные качества</h3>
+                        <ul class="skill-list">
+                            <li>Стрессоустойчивость</li>
+                            <li>Ответственность</li>
+                            <li>Коммуникабельность</li>
+                            <li>Инициативность</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <a href="/cdn-cgi/l/email-protection#dfbbb3a6bef1b8beb3b4b69fb8b2beb6b3f1bcb0b2" class="contact-link">
+                    Связаться со мной
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>2025 · Построено с помощью AI-First подхода</p>
