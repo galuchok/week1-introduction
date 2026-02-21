@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анастасия — AI-First Developer</title>
+    <title>Anastasiya — AI-First Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --deep-blue: #0a1628;
-            --ocean-blue: #1e3a5f;
-            --sky-blue: #4a90e2;
-            --ice-blue: #b8d4f1;
-            --warm-white: #fafbfc;
-            --gold-foil: #c9a961;
+            --midnight: #0f172a;
+            --deep-blue: #1e293b;
+            --ocean: #3b82f6;
+            --sky: #60a5fa;
+            --ice: #dbeafe;
+            --gold: #c9a961;
+            --white: #ffffff;
+            --text-light: #cbd5e1;
+            --text-dim: #94a3b8;
         }
 
         * {
@@ -23,95 +26,94 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'IBM Plex Mono', monospace;
-            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
-            color: var(--warm-white);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .container {
-            max-width: 900px;
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--midnight);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 30px;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--ocean);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 40px 80px;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--deep-blue) 50%, #1e3a5f 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
             position: relative;
             z-index: 1;
-        }
-
-        /* Header section */
-        header {
-            text-align: center;
-            margin-bottom: 80px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .greeting {
-            font-size: 1.1rem;
-            color: var(--ice-blue);
-            margin-bottom: 15px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-            animation: fadeIn 1.2s ease-out 0.3s backwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--gold-foil);
-            animation: fadeIn 1.4s ease-out 0.5s backwards;
-            line-height: 1.2;
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            color: var(--ice-blue);
-            font-weight: 400;
-            animation: fadeIn 1.6s ease-out 0.7s backwards;
-            margin-bottom: 10px;
-        }
-
-        .school-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            background: rgba(74, 144, 226, 0.15);
-            border: 1px solid var(--sky-blue);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--sky-blue);
-            margin-top: 15px;
-            animation: fadeIn 1.8s ease-out 0.9s backwards;
-        }
-
-        /* Main content card */
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(184, 212, 241, 0.15);
-            border-radius: 16px;
-            padding: 50px;
-            margin-bottom: 40px;
-            animation: fadeInUp 1.2s ease-out 1s backwards;
+            animation: fadeInUp 1s ease-out;
         }
 
         @keyframes fadeInUp {
@@ -125,242 +127,704 @@
             }
         }
 
+        .hero-greeting {
+            font-size: 1.1rem;
+            color: var(--sky);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            animation: fadeIn 1.2s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            animation: fadeIn 1.4s ease-out 0.4s backwards;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+            animation: fadeIn 1.6s ease-out 0.6s backwards;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeIn 1.8s ease-out 0.8s backwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 20px;
+            animation: fadeIn 2s ease-out 1s backwards;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--ocean);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--sky);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border-color: var(--ocean);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--gold-foil);
-            margin-bottom: 25px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 15px;
+            display: inline-block;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 0;
             width: 60px;
-            height: 3px;
-            background: var(--gold-foil);
+            height: 4px;
+            background: var(--gold);
         }
 
-        .week-info {
-            background: rgba(74, 144, 226, 0.1);
-            border-left: 4px solid var(--sky-blue);
-            padding: 20px 25px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            animation: fadeIn 1.4s ease-out 1.2s backwards;
+        .section-subtitle {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            max-width: 600px;
         }
 
-        .week-label {
-            font-size: 0.85rem;
-            color: var(--sky-blue);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .week-title {
-            font-size: 1.4rem;
-            color: var(--warm-white);
-            font-weight: 500;
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--ice-blue);
-            margin-bottom: 30px;
-            animation: fadeIn 1.6s ease-out 1.4s backwards;
+            color: var(--text-light);
         }
 
-        /* Contact section */
-        .contact-section {
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-highlight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--ocean);
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            margin-top: 40px;
-            animation: fadeIn 1.8s ease-out 1.6s backwards;
         }
 
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 35px;
-            background: var(--sky-blue);
-            color: var(--warm-white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: opacity 0.3s ease;
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Crimson Pro', serif;
         }
 
-        .contact-link:hover {
-            opacity: 0.9;
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
         }
 
-        .contact-link::before {
-            content: '✉';
-            font-size: 1.3rem;
-        }
-
-        /* Skills section */
+        /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .skill-category {
-            background: rgba(74, 144, 226, 0.08);
-            border: 1px solid rgba(74, 144, 226, 0.2);
-            border-radius: 12px;
-            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 35px;
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: var(--ocean);
+            transform: translateY(-5px);
         }
 
         .skill-category h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--gold-foil);
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
 
-        .skill-list {
-            list-style: none;
-            padding: 0;
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
 
-        .skill-list li {
-            color: var(--ice-blue);
-            padding: 8px 0;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(184, 212, 241, 0.1);
+        .skill-name {
+            color: var(--text-light);
+            font-weight: 500;
         }
 
-        .skill-list li:last-child {
-            border-bottom: none;
+        .learning-badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: auto;
+            font-weight: 600;
         }
 
-        .skill-list li::before {
-            content: '→';
-            color: var(--sky-blue);
-            margin-right: 10px;
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--ocean);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(30, 41, 59, 0.5));
+            padding: 80px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .project-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.3;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--sky);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--ocean);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: var(--ocean);
+            color: var(--white);
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            text-align: center;
+            padding: 60px 30px;
+            border: 2px dashed rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+        }
+
+        .coming-soon-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-text {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-text {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ocean);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--ocean);
+            color: var(--white);
+            border-color: var(--ocean);
+            transform: translateY(-5px);
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 40px;
+            background: var(--ocean);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            background: var(--sky);
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            padding: 40px 40px 30px;
             text-align: center;
-            padding: 40px 20px 20px;
-            color: var(--ice-blue);
-            font-size: 0.9rem;
-            opacity: 0.7;
-            animation: fadeIn 2s ease-out 1.8s backwards;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: var(--text-dim);
+            font-size: 0.95rem;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
             }
 
-            .card {
-                padding: 30px 25px;
+            .hero h1 {
+                font-size: 3.5rem;
             }
 
-            .container {
-                padding: 40px 20px;
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
             }
 
             .section-title {
-                font-size: 1.5rem;
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .nav-container {
+                padding: 20px;
+            }
+
+            section {
+                padding: 60px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="greeting">Добро пожаловать</div>
-            <h1>Привет! Я Анастасия</h1>
-            <p class="tagline">От 1С программиста к AI-First Developer</p>
-            <span class="school-badge">🎓 ARIA School Student</span>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Anastasiya</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <main>
-            <div class="card">
-                <h2 class="section-title">Моё путешествие</h2>
-                
-                <p class="about-text">
-                    После 20+ лет работы с 1С и ERP-системами начинаю новую главу в AI-First Development. 
-                    Учусь создавать современные приложения, используя силу искусственного интеллекта и новейшие технологии.
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-greeting">Welcome</div>
+            <h1>Anastasiya</h1>
+            <div class="hero-title">AI-First Developer</div>
+            <p class="hero-tagline">Building web solutions through AI collaboration</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">From Enterprise Systems to AI-First Development</p>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    After 20+ years of experience in IT, specializing in enterprise automation and ERP systems (1C, SAP S/4HANA), 
+                    I'm embarking on an exciting journey into modern AI-First development.
                 </p>
-
-                <div class="week-info">
-                    <div class="week-label">Сейчас прохожу</div>
-                    <div class="week-title">Week 1 — Infrastructure Mastery</div>
+                <p>
+                    My background includes business process analysis, technical documentation, user training, and leading digital 
+                    transformation projects. Now I'm applying this expertise to build web applications using cutting-edge AI tools 
+                    and modern development practices.
+                </p>
+                <div class="about-highlight">
+                    <strong>Current Focus:</strong> Learning AI-First Development at ARIA School — Week 1: Infrastructure Mastery completed! 
+                    Mastering GitHub, Vercel deployment, and creating production-ready web applications.
                 </div>
-
-                <p class="about-text">
-                    Осваиваю GitHub, Vercel, Claude Projects и создаю свои первые проекты в интернете. 
-                    Каждый день — новый шаг к цели: удалённая работа в современной разработке.
+                <p>
+                    <strong>Goal:</strong> Remote freelance or employment opportunities in modern web development, combining my 
+                    extensive business analysis experience with new technical skills.
                 </p>
             </div>
+            
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years in IT</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Week Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Users Trained</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Passion to Learn</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <h2 class="section-title">Мои навыки</h2>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Технические</h3>
-                        <ul class="skill-list">
-                            <li>1С (8.2, ERP, УТ, WMS)</li>
-                            <li>SAP S/4HANA</li>
-                            <li>SQL, СКД</li>
-                            <li>Datareon, EDI</li>
-                        </ul>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Technologies and tools I work with</p>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <div class="skill-name">HTML5</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💎</div>
+                    <div class="skill-name">CSS3</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">⚡</div>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">⚛️</div>
+                    <div class="skill-name">React</div>
+                    <span class="learning-badge">Learning</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Development Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-icon">🤖</div>
+                    <div class="skill-name">Claude AI</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📦</div>
+                    <div class="skill-name">GitHub</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">▲</div>
+                    <div class="skill-name">Vercel</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <div class="skill-name">Figma</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <div class="skill-item">
+                    <div class="skill-icon">🟢</div>
+                    <div class="skill-name">Node.js</div>
+                    <span class="learning-badge">Learning</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🐘</div>
+                    <div class="skill-name">PostgreSQL</div>
+                    <span class="learning-badge">Learning</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🗄️</div>
+                    <div class="skill-name">SQL</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Business & Legacy</h3>
+                <div class="skill-item">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-name">Business Analysis</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📋</div>
+                    <div class="skill-name">Project Management</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔧</div>
+                    <div class="skill-name">1C / SAP</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📚</div>
+                    <div class="skill-name">Technical Writing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">My journey in AI-First development</p>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">01</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Personal Introduction Site</h3>
+                    <p class="project-description">
+                        My first production website created during Week 1 of AI-First Development course. 
+                        Features responsive design, smooth animations, and professional presentation of my journey 
+                        from enterprise systems to modern web development.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Claude AI</span>
+                        <span class="tech-tag">Vercel</span>
                     </div>
-
-                    <div class="skill-category">
-                        <h3>Инструменты</h3>
-                        <ul class="skill-list">
-                            <li>ChatGPT, Claude</li>
-                            <li>Figma, Photoshop</li>
-                            <li>GitHub, Vercel</li>
-                            <li>UI/UX Design</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Профессиональные</h3>
-                        <ul class="skill-list">
-                            <li>Бизнес-анализ</li>
-                            <li>Управление проектами</li>
-                            <li>Обучение пользователей</li>
-                            <li>Техническая документация</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Личные качества</h3>
-                        <ul class="skill-list">
-                            <li>Стрессоустойчивость</li>
-                            <li>Ответственность</li>
-                            <li>Коммуникабельность</li>
-                            <li>Инициативность</li>
-                        </ul>
+                    <div class="project-links">
+                        <a href="https://week1-introduction-e4cr.vercel.app" target="_blank" class="project-link">
+                            Live Site →
+                        </a>
+                        <a href="https://github.com/galuchok/week1-introduction" target="_blank" class="project-link">
+                            GitHub →
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="contact-section">
-                <a href="/cdn-cgi/l/email-protection#dfbbb3a6bef1b8beb3b4b69fb8b2beb6b3f1bcb0b2" class="contact-link">
-                    Связаться со мной
+            <div class="coming-soon">
+                <div class="coming-soon-icon">🚀</div>
+                <div class="coming-soon-text">More projects coming soon!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p class="contact-text">
+                I'm open to freelance projects, remote employment opportunities, and collaborations. 
+                Let's build something great together!
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:dlya.galki@gmail.com" class="social-link" title="Email">
+                    ✉️
+                </a>
+                <a href="https://github.com/galuchok" target="_blank" class="social-link" title="GitHub">
+                    💻
+                </a>
+                <a href="https://t.me/Galuchok" target="_blank" class="social-link" title="Telegram">
+                    ✈️
                 </a>
             </div>
-        </main>
 
-        <footer>
-            <p>2025 · Построено с помощью AI-First подхода</p>
+            <a href="mailto:dlya.galki@gmail.com" class="contact-email">
+                📧 Send me an email
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">
+                © 2025 Anastasiya. Built with AI-First approach using Claude AI.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
