@@ -239,16 +239,14 @@
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            max-width: 900px;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-light);
+            margin-bottom: 40px;
         }
 
         .about-text p {
@@ -265,8 +263,22 @@
 
         .about-stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+        }
+
+        /* Two column layout for About + Projects */
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .column {
+            min-width: 0;
         }
 
         .stat-card {
@@ -355,12 +367,6 @@
         }
 
         /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
         .project-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(59, 130, 246, 0.2);
@@ -443,24 +449,6 @@
         .project-link:hover {
             background: var(--ocean);
             color: var(--white);
-        }
-
-        .coming-soon {
-            opacity: 0.6;
-            text-align: center;
-            padding: 60px 30px;
-            border: 2px dashed rgba(59, 130, 246, 0.3);
-            border-radius: 16px;
-        }
-
-        .coming-soon-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .coming-soon-text {
-            font-size: 1.2rem;
-            color: var(--text-dim);
         }
 
         /* Contact Section */
@@ -556,16 +544,17 @@
                 font-size: 1.5rem;
             }
 
-            .about-content {
+            .two-column-section {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .section-title {
                 font-size: 2.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -616,52 +605,94 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">From Enterprise Systems to AI-First Development</p>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    After 20+ years of experience in IT, specializing in enterprise automation and ERP systems (1C, SAP S/4HANA), 
-                    I'm embarking on an exciting journey into modern AI-First development.
-                </p>
-                <p>
-                    My background includes business process analysis, technical documentation, user training, and leading digital 
-                    transformation projects. Now I'm applying this expertise to build web applications using cutting-edge AI tools 
-                    and modern development practices.
-                </p>
-                <div class="about-highlight">
-                    <strong>Current Focus:</strong> Learning AI-First Development at ARIA School — Week 1: Infrastructure Mastery completed! 
-                    Mastering GitHub, Vercel deployment, and creating production-ready web applications.
-                </div>
-                <p>
-                    <strong>Goal:</strong> Remote freelance or employment opportunities in modern web development, combining my 
-                    extensive business analysis experience with new technical skills.
-                </p>
-            </div>
+    <!-- About & Projects Section -->
+    <div class="two-column-section">
+        <!-- About Column -->
+        <div class="column" id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">From Enterprise Systems to AI-First Development</p>
             
-            <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Years in IT</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        After 20+ years of experience in IT, specializing in enterprise automation and ERP systems (1C, SAP S/4HANA), 
+                        I'm embarking on an exciting journey into modern AI-First development.
+                    </p>
+                    <p>
+                        My background includes business process analysis, technical documentation, user training, and leading digital 
+                        transformation projects. Now I'm applying this expertise to build web applications using cutting-edge AI tools 
+                        and modern development practices.
+                    </p>
+                    <div class="about-highlight">
+                        <strong>Current Focus:</strong> Learning AI-First Development at ARIA School — Week 1: Infrastructure Mastery completed! 
+                        Mastering GitHub, Vercel deployment, and creating production-ready web applications.
+                    </div>
+                    <p>
+                        <strong>Key Strengths:</strong> Fast learner with proven ability to quickly adapt to new technologies. 
+                        Completed UI/UX Design course (K2 Online School, 2024-2025) and now mastering modern web development stack. 
+                        My 20+ years of IT experience combined with enthusiasm for continuous learning makes me a valuable team member.
+                    </p>
+                    <p>
+                        <strong>Goal:</strong> Remote freelance or employment opportunities in modern web development, combining my 
+                        extensive business analysis experience with new technical skills.
+                    </p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Week Completed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Users Trained</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Passion to Learn</div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years in IT</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Week Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Users Trained</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Passion to Learn</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Projects Column -->
+        <div class="column" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">My journey in AI-First development</p>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">01</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Personal Introduction Site</h3>
+                    <p class="project-description">
+                        My first production website created during Week 1 of AI-First Development course. 
+                        Features responsive design, smooth animations, and professional presentation of my journey 
+                        from enterprise systems to modern web development.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Claude AI</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://week1-introduction-e4cr.vercel.app" target="_blank" class="project-link">
+                            Live Site →
+                        </a>
+                        <a href="https://github.com/galuchok/week1-introduction" target="_blank" class="project-link">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Skills Section -->
     <section id="skills">
@@ -693,10 +724,6 @@
             <div class="skill-category">
                 <h3>Development Tools</h3>
                 <div class="skill-item">
-                    <div class="skill-icon">🤖</div>
-                    <div class="skill-name">Claude AI</div>
-                </div>
-                <div class="skill-item">
                     <div class="skill-icon">📦</div>
                     <div class="skill-name">GitHub</div>
                 </div>
@@ -705,8 +732,12 @@
                     <div class="skill-name">Vercel</div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-icon">🎨</div>
-                    <div class="skill-name">Figma</div>
+                    <div class="skill-icon">💾</div>
+                    <div class="skill-name">Git</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔍</div>
+                    <div class="skill-name">VS Code</div>
                 </div>
             </div>
 
@@ -747,46 +778,53 @@
                     <div class="skill-name">Technical Writing</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">My journey in AI-First development</p>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-number">01</div>
+            <div class="skill-category">
+                <h3>Design & AI Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <div class="skill-name">UI/UX Design</div>
                 </div>
-                <div class="project-content">
-                    <h3 class="project-title">Personal Introduction Site</h3>
-                    <p class="project-description">
-                        My first production website created during Week 1 of AI-First Development course. 
-                        Features responsive design, smooth animations, and professional presentation of my journey 
-                        from enterprise systems to modern web development.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">Claude AI</span>
-                        <span class="tech-tag">Vercel</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://week1-introduction-e4cr.vercel.app" target="_blank" class="project-link">
-                            Live Site →
-                        </a>
-                        <a href="https://github.com/galuchok/week1-introduction" target="_blank" class="project-link">
-                            GitHub →
-                        </a>
-                    </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📐</div>
+                    <div class="skill-name">Figma</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🖼️</div>
+                    <div class="skill-name">Photoshop</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">✨</div>
+                    <div class="skill-name">Claude AI</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💬</div>
+                    <div class="skill-name">ChatGPT</div>
                 </div>
             </div>
 
-            <div class="coming-soon">
-                <div class="coming-soon-icon">🚀</div>
-                <div class="coming-soon-text">More projects coming soon!</div>
+            <div class="skill-category">
+                <h3>Personal Qualities</h3>
+                <div class="skill-item">
+                    <div class="skill-icon">🎯</div>
+                    <div class="skill-name">Fast Learner</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💪</div>
+                    <div class="skill-name">Stress Resistant</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🤝</div>
+                    <div class="skill-name">Team Player</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">✅</div>
+                    <div class="skill-name">Responsible</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🚀</div>
+                    <div class="skill-name">Self-Motivated</div>
+                </div>
             </div>
         </div>
     </section>
@@ -801,7 +839,7 @@
             </p>
             
             <div class="social-links">
-                <a href="mailto:dlya.galki@gmail.com" class="social-link" title="Email">
+                <a href="/cdn-cgi/l/email-protection#c7a3abbea6e9a0a6abacae87a0aaa6aeabe9a4a8aa" class="social-link" title="Email">
                     ✉️
                 </a>
                 <a href="https://github.com/galuchok" target="_blank" class="social-link" title="GitHub">
@@ -812,7 +850,7 @@
                 </a>
             </div>
 
-            <a href="mailto:dlya.galki@gmail.com" class="contact-email">
+            <a href="/cdn-cgi/l/email-protection#f99d958098d79e98959290b99e94989095d79a9694" class="contact-email">
                 📧 Send me an email
             </a>
         </div>
@@ -822,9 +860,4 @@
     <footer>
         <div class="footer-content">
             <p class="footer-text">
-                © 2025 Anastasiya. Built with AI-First approach using Claude AI.
-            </p>
-        </div>
-    </footer>
-</body>
-</html>
+                © 2025 Anastasiya. Built with AI-First a
